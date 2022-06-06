@@ -1,13 +1,20 @@
 package com.zensar.entity;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
-@Embeddable
+@Entity
 public class Department {
-	
+	@Id
 	private int departmentId;
 	
 	private String departmentName;
+	
+	@OneToOne()
+	private Student student;
+	
+	
 
 	public Department() {
 		super();
@@ -17,6 +24,15 @@ public class Department {
 		super();
 		this.departmentId = departmentId;
 		this.departmentName = departmentName;
+	}
+	
+	
+
+	public Department(int departmentId, String departmentName, Student student) {
+		super();
+		this.departmentId = departmentId;
+		this.departmentName = departmentName;
+		this.student = student;
 	}
 
 	public int getDepartmentId() {
@@ -34,11 +50,24 @@ public class Department {
 	public void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
 	}
+	
+	
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 
 	@Override
 	public String toString() {
-		return "Department [departmentId=" + departmentId + ", departmentName=" + departmentName + "]";
+		return "Department [departmentId=" + departmentId + ", departmentName=" + departmentName + ", student="
+				+ student + "]";
 	}
+
+	
 	
 	
 	

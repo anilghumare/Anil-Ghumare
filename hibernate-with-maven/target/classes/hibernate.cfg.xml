@@ -14,8 +14,10 @@
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
 
-		<mapping class="com.zensar.entity.Product" />
-		<mapping class="com.zensar.entity.Student"/>
+		<!-- <mapping class="com.zensar.entity.Product" /> -->
+		<mapping class="com.zensar.entity.Student" />
+		<mapping class="com.zensar.entity.Address" />
+		<!-- <mapping class="com.zensar.entity.Department" /> -->
 	</session-factory>
 
 </hibernate-configuration>
