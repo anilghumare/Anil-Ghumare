@@ -11,11 +11,18 @@ public class Product {
 		System.out.println("Inside Product Bean !!!");
 	}
 
+	
+
 	public Product(int productId, String productName, int productCost) {
 		super();
+		System.out.println("Inside Product(int productId, String productName, int productCost)");
 		this.productId = productId;
 		this.productName = productName;
 		this.productCost = productCost;
+	}
+	
+	public Product(String productId, String productName, String productCost) {
+		System.out.println("Inside Product(String productId, String productName, String productCost)");
 	}
 
 	public int getProductId() {
@@ -23,6 +30,7 @@ public class Product {
 	}
 
 	public void setProductId(int productId) {
+		System.out.println("Inside public void setProductId(int productId)");
 		this.productId = productId;
 	}
 
@@ -31,6 +39,7 @@ public class Product {
 	}
 
 	public void setProductName(String productName) {
+		System.out.println("Inside setProductName(String productName)");
 		this.productName = productName;
 	}
 
@@ -39,6 +48,7 @@ public class Product {
 	}
 
 	public void setProductCost(int productCost) {
+		System.out.println("Inside setProductCost(int productCost)");
 		this.productCost = productCost;
 	}
 
