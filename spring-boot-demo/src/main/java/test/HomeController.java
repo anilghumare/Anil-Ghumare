@@ -1,4 +1,4 @@
-package com.zensar.springbootdemo.controllers;
+package test;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
