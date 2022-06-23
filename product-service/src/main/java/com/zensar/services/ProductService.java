@@ -4,6 +4,6 @@ import com.zensar.entity.Product;
 
 public interface ProductService {
 
-	Product insertProduct(Product product);
+	Product insertProduct(Product product);  
 
 }
