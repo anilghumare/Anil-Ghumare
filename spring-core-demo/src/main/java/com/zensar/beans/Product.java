@@ -1,5 +1,8 @@
 package com.zensar.beans;
 
+import org.springframework.stereotype.Component;
+
+
 public class Product {
 
 	private int productId;

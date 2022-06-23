@@ -1,28 +1,46 @@
 package com.zensar.beans;
 
-import java.util.Map;
-import java.util.Properties;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+//@Component("stud")
+//@Repository("stud")
+//@Scope("prototype")
 public class Student {
 
+	//@Value("${id}")
 	private int studentId;
+	//@Value("${name}")
 	private String studentName;
+	//@Value("${age}")
 	private int studentAge;
-
-	private Map<Address,Integer> address;
-	
-	private Properties properties;
 
 	public Student() {
 		super();
+		System.out.println("I am inside default constructor");
 	}
 
-	public Student(int studentId, String studentName, int studentAge, Map<Address,Integer> address) {
+	@PostConstruct
+	public void myInit() {
+		System.out.println("I am inside myInit");
+	}
+
+	@PreDestroy
+	public void myDestroy() {
+		System.out.println(" I am inside myDestroy");
+	}
+
+	public Student(int studentId, String studentName, int studentAge) {
 		super();
 		this.studentId = studentId;
 		this.studentName = studentName;
 		this.studentAge = studentAge;
-		this.address = address;
+
 	}
 
 	public int getStudentId() {
@@ -30,6 +48,7 @@ public class Student {
 	}
 
 	public void setStudentId(int studentId) {
+		System.out.println("I am inside setStudentId");
 		this.studentId = studentId;
 	}
 
@@ -49,33 +68,9 @@ public class Student {
 		this.studentAge = studentAge;
 	}
 
-	public Map<Address,Integer> getAddress() {
-		return address;
-	}
-
-	public void setAddress(Map<Address,Integer> address) {
-		this.address = address;
-	}
-	
-	
-
-	public Properties getProperties() {
-		return properties;
-	}
-
-	public void setProperties(Properties properties) {
-		this.properties = properties;
-	}
-
 	@Override
 	public String toString() {
-		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", studentAge=" + studentAge
-				+ ", address=" + address + ", properties=" + properties + "]";
+		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", studentAge=" + studentAge + "]";
 	}
-
-	
-	
-	
-
 
 }
