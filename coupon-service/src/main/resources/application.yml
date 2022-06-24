@@ -6,8 +6,12 @@ spring:
   jpa:
    hibernate:
     ddl-auto: update
-
+  application:
+    name: coupon-service
       
+server:
+ port: 6765
+ 
 
     
 
